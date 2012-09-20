@@ -1,8 +1,8 @@
-Currently in beta!
+=== Currently in beta! ===
 
 See a demo at http://cyanpanda.com/demo/index.php !
 
-== To Install ==
+=== To Install ===
 
 Upload the files.
 

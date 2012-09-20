@@ -14,17 +14,17 @@ Now in your file:
 
 add the following:
 
- <?php
+    <?php
 
- require 'steamauth/profilevars.php';
+    require 'steamauth/profilevars.php';
 
- session_start();
- if(isset($_SESSION['steamid'])) {
+    session_start();
+    if(isset($_SESSION['steamid'])) {
 
     //Protected content
     echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button
     }  
- else {
+    else {
     steamlogin(); //login button
- }    
- ?>
+    }    
+    ?>

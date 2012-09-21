@@ -23,8 +23,7 @@ try {
                 $id = $openid->identity;
                 $ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
                 preg_match($ptn, $id, $matches);
-                // echo "User is logged in (steamID: $matches[1])\n";
-                $api_key = "802AA72CC7B09FDBD9F6F829F5634CE8";
+                $api_key = "";
                 $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=";
                 $urlb = $urla . $api_key;
                 $urlc = "&steamids=";

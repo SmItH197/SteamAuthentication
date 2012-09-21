@@ -6,7 +6,7 @@ See a demo at http://cyanpanda.com/demo/index.php !
 Foreword
 ==========================
 
-Some Credit goes to:
+Thanks goes to:
 - JTX for the original steam openid script (http://pastebin.com/6vZT4RhD)
 - The LightopenID library (http://gitorious.org/lightopenid)
 

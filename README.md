@@ -1,8 +1,15 @@
-=== Currently in beta! ===
+''' Currently in beta! '''
 
 See a demo at http://cyanpanda.com/demo/index.php !
 
-=== To Install ===
+''' Foreword '''
+
+Credit goes to:
+- JTX for the original steam openid script (http://pastebin.com/6vZT4RhD)
+- The LightopenID library (http://gitorious.org/lightopenid)
+
+
+''' To Install '''
 
 Upload the files.
 

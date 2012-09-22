@@ -38,7 +38,7 @@ add the following:
     }    
     ?>
     
-**PLEASE NOTE: ** 
+**PLEASE NOTE:** 
 
 When the user returns to your site after logging in they will no be returned to the page they were previously at! 
 An example of this can be seen on the demo site (http://cyanpanda.com/demo/index.php) the url will look something like:

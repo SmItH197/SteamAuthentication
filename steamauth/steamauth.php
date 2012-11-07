@@ -53,8 +53,8 @@ try {
                 session_start();
                 $_SESSION['steamid'] = $steamprofile['steamid']; 
                 $_SESSION['back'] = htmlentities($_SERVER[’REQUEST_URI’]); 
-                echo 'Welcome '.$steamprofile['personaname'].' You have successfuly logged in, click back to go back to where you came from: .';
-                echo '<h3><a href="'.$_SESSION['back'].'">back</a></h3>';
+                echo '<h2>Welcome '.$steamprofile['personaname'].' You have successfuly logged in, click back to go back to where you came from: .';
+                echo '<a href="'.$_SESSION['back'].'">back</a></h2>';
         } else {
                 echo "User is not logged in.\n";
         }

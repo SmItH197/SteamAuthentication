@@ -27,16 +27,17 @@ add the following:
 
     require 'steamauth/profilevars.php';
 
-    session_start();
-    if(isset($_SESSION['steamid'])) {
+    if(!isset($_SESSION['steamid'])) {
 
-    //Protected content
+        echo "welcome guest! please login \n \n";
+        steamlogin(); //login button
     
-    echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button
-    }  
-    else {
-    steamlogin(); //login button
-    }    
+    }  else {
+        //Protected content
+        echo "OMG! You logged in! :D \n";
+        echo "your steam ID is: " . $_SESSION['steamid'] . "\n";
+        logoutbutton();
+    }     
     ?>
     
     

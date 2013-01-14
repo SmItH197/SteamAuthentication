@@ -35,7 +35,7 @@ add the following:
     }  else {
         //Protected content
         echo "OMG! You logged in! :D \n";
-        echo "your steam ID is: " . $_SESSION['steamid'] . "\n";
+        echo "your steam ID is: " . $_SESSION['steamid'] . "\n"; //prints their steam ID!
         logoutbutton();
     }     
     ?>

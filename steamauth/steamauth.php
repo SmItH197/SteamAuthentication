@@ -3,11 +3,16 @@
 
 require 'openid.php';
 $api_key = "802AA72CC7B09FDBD9F6F829F5634CE8";
+
+function logoutbutton() {
+    echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button
+}
+
 function steamlogin()
 {
 try {
-    # Change 'localhost' to your domain name.
-    $openid = new LightOpenID('localhost');
+    // Change 'localhost' to your domain name.
+    $openid = new LightOpenID('smith197.koding.com');
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';
@@ -25,10 +30,10 @@ try {
                 preg_match($ptn, $id, $matches);
               
                 session_start();
-                $_SESSION['steamid'] = $steamprofile['steamid']; 
-                $_SESSION['back'] = htmlentities($_SERVER[’REQUEST_URI’]); 
-                echo '<h2>Welcome '.$steamprofile['personaname'].' You have successfuly logged in, click back to go back to where you came from: .';
-                echo '<a href="'.$_SESSION['back'].'">back</a></h2>';
+                $_SESSION['steamid'] = $matches[1]; 
+                
+                 header('Location: '.$_SERVER['REQUEST_URI']);
+                 
         } else {
                 echo "User is not logged in.\n";
         }

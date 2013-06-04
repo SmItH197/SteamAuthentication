@@ -1,7 +1,7 @@
-Currently in alpha!
+Currently in the process of creating a new, improved, cleaner version of this! (4th june 2013)
 ==========================
 
-See a demo at http://cyanpanda.com/demo/index.php !
+See a demo at http://smith197.koding.com/steam/index.php !
 
 Foreword
 ==========================

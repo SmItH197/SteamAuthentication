@@ -2,8 +2,6 @@
 
 SteamAuthentication is a basic set of PHP files that enable users to login using their steam account to view protected content on your website. it creates a session using their steamid as the sessionID and checks for the session when a user visits the page. It also includes a file which allows you to use their profile information such as their avatar and online status.
 
-jQuery News is a basic [jQuery](https://github.com/jquery/jquery/) plugin that fetches headlines on a given topic from [Google News](https://news.google.com/) and puts them into the selected class as a `<li>`.
-
 See a demo at * link coming soon - just updating my website ;) *
 
 ##Foreword

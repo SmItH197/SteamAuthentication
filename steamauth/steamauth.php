@@ -1,8 +1,8 @@
 <?php
 
-
+session_start();
 require 'openid.php';
-$api_key = "802AA72CC7B09FDBD9F6F829F5634CE8";
+$api_key = "802AA72CC7B09FDBD9F6F829F5634CE8"; //API Key here!
 
 function logoutbutton() {
     echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button
@@ -12,7 +12,7 @@ function steamlogin()
 {
 try {
     // Change 'localhost' to your domain name.
-    $openid = new LightOpenID('smith197.koding.com');
+    $openid = new LightOpenID('localhost');
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';

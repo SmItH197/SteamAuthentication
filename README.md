@@ -1,7 +1,7 @@
 Currently in the process of creating a new, improved, cleaner version of this! (4th june 2013)
 ==========================
 
-See a demo at http://smith197.koding.com/steam/index.php !
+See a demo at *link coming soon - just updating my website ;) !
 
 Foreword
 ==========================
@@ -13,30 +13,25 @@ Thanks goes to:
 To Install
 ==========================
 
-Upload the files.
+Upload the `steamauth` folder.
 
 Open up steamauth.php and change localhost to your domain
-Find $api_key and set it to the api key you got from http://steamcommunity.com/dev/apikey
-Go to line 27 and add you API key there as well.
+Find $api_key on line 5 and set it to the api key you got from http://steamcommunity.com/dev/apikey
 
-Now in your file:
-
-add the following:
+Now in your file add the following:
 
     <?php
 
-    require 'steamauth/profilevars.php';
+    require 'steamauth/steamauth.php';
 
     if(!isset($_SESSION['steamid'])) {
 
-        echo "welcome guest! please login \n \n";
         steamlogin(); //login button
     
     }  else {
         //Protected content
-        echo "OMG! You logged in! :D \n";
-        echo "your steam ID is: " . $_SESSION['steamid'] . "\n"; //prints their steam ID!
-        logoutbutton();
+
+        logoutbutton(); //Logout Button
     }     
     ?>
     

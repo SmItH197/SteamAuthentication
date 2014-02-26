@@ -4,6 +4,8 @@ SteamAuthentication is a basic set of PHP files that enable users to login using
 
 See a demo at * link coming soon - just updating my website ;) *
 
+Please note the main repository is constantly being updated so may contain bugs and other bleeding edge risks. For a stable download please visit the releases page.
+
 ##Foreword
 
 Thanks goes to:
@@ -17,17 +19,24 @@ Upload the `steamauth` folder.
 Open up steamauth.php and change localhost to your domain
 Find $api_key on line 5 and set it to the api key you got from http://steamcommunity.com/dev/apikey
 
-Now in your file add the following:
+Now in your file add the following at the top:
 
     <?php
 
     require 'steamauth/steamauth.php';
+    
+    ?>
+    
+And where you want the protected content to be:
 
+    <?php
     if(!isset($_SESSION['steamid'])) {
 
         steamlogin(); //login button
     
     }  else {
+    
+        include ('steamauth/userInfo.php'); //To access the $steamprofile array
         //Protected content
 
         logoutbutton(); //Logout Button
@@ -52,6 +61,8 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['timecreated']` - When the account was created
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
+
+* For more help on laying out the document or using the $steamprofile variable see the example.php file!
 
  
 

@@ -1,10 +1,9 @@
 <?php
 
-    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=802AA72CC7B09FDBD9F6F829F5634CE8";
-    $urlb = $urla;// . $api_key;
-    $urlc = "&steamids=";
-    $urld = $urlb . $urlc;
-    $url = $urld . $_SESSION['steamid'];
+    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="; //Insert API Key after ?key
+    $urlb = "&steamids=";
+    $urlc = $urla . $urlb;
+    $url = $urlc . $_SESSION['steamid'];
     $ch = curl_init();
     curl_setopt( $ch, CURLOPT_URL, $url);
     curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);

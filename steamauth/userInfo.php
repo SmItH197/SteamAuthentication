@@ -1,6 +1,8 @@
 <?php
 
-    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="; //Insert API Key after ?key
+    $api_key = ""; // Insert API Key here!
+
+    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $api_key; 
     $urlb = "&steamids=";
     $urlc = $urla . $urlb;
     $url = $urlc . $_SESSION['steamid'];

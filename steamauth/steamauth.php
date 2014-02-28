@@ -1,8 +1,8 @@
 <?php
-
+ob_start();
 session_start();
 require 'openid.php';
-$api_key = ""; //API Key here!
+$api_key = ""; //Insert API Key here!
 
 function logoutbutton() {
     echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button

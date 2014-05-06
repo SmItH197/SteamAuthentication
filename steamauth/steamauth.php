@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require 'openid.php';
+require ('openid.php');
 $api_key = ""; //Insert API Key here!
 
 function logoutbutton() {
@@ -44,3 +44,4 @@ try {
 }
 }
 
+?>

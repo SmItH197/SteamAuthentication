@@ -48,7 +48,7 @@ By default, the logout button redirects to index.php, this can be changed in the
 
 I have create a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
 
-* `$steamprofile['steamid'] = $content['response']['players'][0]['steamid'];` - The users unique SteamID
+* `$steamprofile['steamid']` - The users unique SteamID
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
 * `$steamprofile['profilestate']` - If set, indicates the user has a community profile configured (will be set to '1')
 * `$steamprofile['personaname']` - Their current set profile name

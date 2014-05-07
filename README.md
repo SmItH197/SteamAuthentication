@@ -55,8 +55,8 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['lastlogoff']` - Last time the user was online in unix time
 * `$steamprofile['profileurl']` - The URL to their steam profile
 * `$steamprofile['avatar']` - The image URL to the smallest size of their avatar (32px x 32px)
-* `$steamprofile['avatarmedium']` - The image URL to the smallest size of their avatar (64px x 64px)
-* `$steamprofile['avatarfull']` - The image URL to the smallest size of their avatar (184px x 184px)
+* `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)
+* `$steamprofile['avatarfull']` - The image URL to the largest size of their avatar (184px x 184px)
 * `$steamprofile['personastate']` - The users current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
 * `$steamprofile['primaryclanid']` - The users primary group
 * `$steamprofile['timecreated']` - When the account was created

@@ -2,16 +2,8 @@
 
     $api_key = ""; // Insert API Key here!
 
-    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $api_key; 
-    $urlb = "&steamids=";
-    $urlc = $urla . $urlb;
-    $url = $urlc . $_SESSION['steamid'];
-    $ch = curl_init();
-    curl_setopt( $ch, CURLOPT_URL, $url);
-    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
-    $content = curl_exec($ch);
-    curl_close($ch);
-    $content = json_decode($content, true);
+    $url = file_get_contents("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$api_key."&steamids=".$_SESSION['steamid']); 
+    $content = json_decode($url, true);
 
     $steamprofile['steamid'] = $content['response']['players'][0]['steamid'];
     $steamprofile['communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];

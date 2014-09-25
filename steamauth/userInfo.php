@@ -1,35 +1,30 @@
 <?php
-    if (empty($_SESSION['steam_uptodate'])) {
-        $api_key = ""; // Insert API Key here!
-        $url = file_get_contents("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$api_key."&steamids=".$_SESSION['steamid']); 
-        $content = json_decode($url, true);
-        $_SESSION['steam_steamid'] = $content['response']['players'][0]['steamid'];
-        $_SESSION['steam_communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];
-        $_SESSION['steam_profilestate'] = $content['response']['players'][0]['profilestate'];
-        $_SESSION['steam_personaname'] = $content['response']['players'][0]['personaname'];
-        $_SESSION['steam_lastlogoff'] = $content['response']['players'][0]['lastlogoff'];
-        $_SESSION['steam_profileurl'] = $content['response']['players'][0]['profileurl'];
-        $_SESSION['steam_avatar'] = $content['response']['players'][0]['avatar'];
-        $_SESSION['steam_avatarmedium'] = $content['response']['players'][0]['avatarmedium'];
-        $_SESSION['steam_avatarfull'] = $content['response']['players'][0]['avatarfull'];
-        $_SESSION['steam_personastate'] = $content['response']['players'][0]['personastate'];
-        $_SESSION['steam_realname'] = $content['response']['players'][0]['realname'];
-        $_SESSION['steam_primaryclanid'] = $content['response']['players'][0]['primaryclanid'];
-        $_SESSION['steam_timecreated'] = $content['response']['players'][0]['timecreated'];
-        $_SESSION['steam_uptodate'] = true;
-    }
-    $steamprofile['steamid'] = $_SESSION['steam_steamid'];
-    $steamprofile['communityvisibilitystate'] = $_SESSION['steam_communityvisibilitystate'];
-    $steamprofile['profilestate'] = $_SESSION['steam_profilestate'];
-    $steamprofile['personaname'] = $_SESSION['steam_personaname'];
-    $steamprofile['lastlogoff'] = $_SESSION['steam_lastlogoff'];
-    $steamprofile['profileurl'] = $_SESSION['steam_profileurl'];
-    $steamprofile['avatar'] = $_SESSION['steam_avatar'];
-    $steamprofile['avatarmedium'] = $_SESSION['steam_avatarmedium'];
-    $steamprofile['avatarfull'] = $_SESSION['steam_avatarfull'];
-    $steamprofile['personastate'] = $_SESSION['steam_personastate'];
-    $steamprofile['realname'] = $_SESSION['steam_realname'];
-    $steamprofile['primaryclanid'] = $_SESSION['steam_primaryclanid'];
-    $steamprofile['timecreated'] = $_SESSION['steam_timecreated'];
+
+    $api_key = ""; // Insert API Key here!
+
+    $urla = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $api_key; 
+    $urlb = "&steamids=";
+    $urlc = $urla . $urlb;
+    $url = $urlc . $_SESSION['steamid'];
+    $ch = curl_init();
+    curl_setopt( $ch, CURLOPT_URL, $url);
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+    $content = curl_exec($ch);
+    curl_close($ch);
+    $content = json_decode($content, true);
+
+    $steamprofile['steamid'] = $content['response']['players'][0]['steamid'];
+    $steamprofile['communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];
+    $steamprofile['profilestate'] = $content['response']['players'][0]['profilestate'];
+    $steamprofile['personaname'] = $content['response']['players'][0]['personaname'];
+    $steamprofile['lastlogoff'] = $content['response']['players'][0]['lastlogoff'];
+    $steamprofile['profileurl'] = $content['response']['players'][0]['profileurl'];
+    $steamprofile['avatar'] = $content['response']['players'][0]['avatar'];
+    $steamprofile['avatarmedium'] = $content['response']['players'][0]['avatarmedium'];
+    $steamprofile['avatarfull'] = $content['response']['players'][0]['avatarfull'];
+    $steamprofile['personastate'] = $content['response']['players'][0]['personastate'];
+    $steamprofile['realname'] = $content['response']['players'][0]['realname'];
+    $steamprofile['primaryclanid'] = $content['response']['players'][0]['primaryclanid'];
+    $steamprofile['timecreated'] = $content['response']['players'][0]['timecreated'];
 ?>
     

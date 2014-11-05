@@ -42,7 +42,7 @@ And where you want the protected content to be:
     }     
     ?>
     
-By default, the logout button redirects to index.php, this can be changed in the `logout.php` file on line 2.
+By default, the logout button redirects to the root of the current folder, this can be changed in the `logout.php` file on line 2.
     
 ##Using Profile Variables
 

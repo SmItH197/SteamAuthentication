@@ -18,8 +18,6 @@ Upload the `steamauth` folder.
 
 Open up steamauth.php and change `example.com` on line 15 to your domain name. 
 
-Now find $api_key on line 5 and set it to the api key you got from http://steamcommunity.com/dev/apikey . Now do the same with the $api_key variable on line 3 of userInfo.php.
-
 Now in your file add the following at the top:
 
     <?php

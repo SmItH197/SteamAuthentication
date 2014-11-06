@@ -60,7 +60,7 @@ You can choose the style of the login button by opening `steamauth.php` and goin
 
 `$button['large']`
 
-![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png)
 
     
 ##Using Profile Variables

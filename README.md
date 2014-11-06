@@ -18,7 +18,7 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up steamauth.php and change `example.com` on line 15 to your domain name. 
+Open up `steamauth.php` and change `example.com` on line 15 to your domain name. 
 
 Now in your file add the following at the top:
 
@@ -43,8 +43,25 @@ And where you want the protected content to be:
         logoutbutton(); //Logout Button
     }     
     ?>
-    
+
 By default, the logout button redirects to the root of the current folder, this can be changed in the `logout.php` file on line 2.
+
+###Choosing a login button style
+
+You can choose the style of the login button by opening `steamauth.php` and going to line 21 and changing the value of the `$button` to one of the following:
+
+`$button['small']` 
+
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png)
+
+`$button['large_no']`
+
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
+
+`$button['large']`
+
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
+
     
 ##Using Profile Variables
 

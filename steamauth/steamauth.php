@@ -11,13 +11,21 @@ function steamlogin()
 {
 try {
     // Change 'localhost' to your domain name.
-    $openid = new LightOpenID('example.com');
+    $openid = new LightOpenID('localhost');
+    
+    $button['small'] = "small";
+    $button['large_no'] = "large_noborder";
+    $button['large'] = "large_border";
+    
+    // Choose your login button style here
+    $button = $button['large'];
+    
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';
             header('Location: ' . $openid->authUrl());
         }
-    echo "<form action=\"?login\" method=\"post\"> <input type=\"image\" src=\"http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png\"></form>";
+    echo "<form action=\"?login\" method=\"post\"> <input type=\"image\" src=\"http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_".$button.".png\"></form>";
 }
 
      elseif($openid->mode == 'cancel') {

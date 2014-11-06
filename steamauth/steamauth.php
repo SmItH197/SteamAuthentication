@@ -11,7 +11,7 @@ function steamlogin()
 {
 try {
     // Change 'localhost' to your domain name.
-    $openid = new LightOpenID('localhost');
+    $openid = new LightOpenID('example.com');
     
     $button['small'] = "small";
     $button['large_no'] = "large_noborder";

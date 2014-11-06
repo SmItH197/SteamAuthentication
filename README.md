@@ -4,6 +4,8 @@ SteamAuthentication is a basic set of PHP files that enable users to login using
 
 See a demo at http://bensmith.in/steam/demo/
 
+##Download
+
 Please note the main repository is constantly being updated so may contain bugs and other bleeding edge risks. For a stable download please visit the releases page: https://github.com/SmItH197/SteamAuthentication/releases
 
 ##Foreword

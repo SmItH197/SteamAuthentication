@@ -45,9 +45,9 @@ And where you want the protected content to be:
     }     
     ?>
 
-By default, the logout button redirects to the root of the current folder, this can be changed in the `logout.php` file on line 2.
+By default, the logout button redirects to the root of the current folder, this can be changed in the settings.
 
-`Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.`
+####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 
 ###Choosing a login button style
 

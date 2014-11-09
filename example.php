@@ -1,6 +1,8 @@
 <?php
     require ('steamauth/steamauth.php');  
-        
+    
+	# You would uncomment the line beneath to make it refresh the data every time the page is loaded
+	// $_SESSION['steam_uptodate'] = false;
 ?>
 <html>
 <head>

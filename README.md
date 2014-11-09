@@ -18,7 +18,8 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up `steamauth.php` and change `example.com` on line 15 to your domain name. 
+Open up `settings.php` and change `$domainname` to your domain name.
+Add your API-Key from http://steamcommunity.com/dev/apikey
 
 Now in your file add the following at the top:
 
@@ -44,21 +45,23 @@ And where you want the protected content to be:
     }     
     ?>
 
-By default, the logout button redirects to the root of the current folder, this can be changed in the `logout.php` file on line 2.
+By default, the logout button redirects to the root of the current folder, this can be changed in the settings.
+
+####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 
 ###Choosing a login button style
 
-You can choose the style of the login button by opening `steamauth.php` and going to line 21 and changing the value of the `$button` to one of the following:
+You can choose the style of the login button by opening `steamauth.php` and going to line 21 and changing the value of `$button_style` to one of the following:
 
-`$button['small']` 
+`$button_style = "small";` 
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png)
 
-`$button['large_no']`
+`$button_style = "large_no";`
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
 
-`$button['large']`
+`$button_style = "large";`
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png)
 
@@ -80,6 +83,7 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['realname']` - Get the real name
 * `$steamprofile['primaryclanid']` - The users primary group
 * `$steamprofile['timecreated']` - When the account was created
+* `$_SESSION['steam_uptodate']` - Set to false to refresh data from Steam
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
 

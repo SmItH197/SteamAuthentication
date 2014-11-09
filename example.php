@@ -39,7 +39,7 @@ if(!isset($_SESSION['steamid'])) {
 	<tr><td>\$steamprofile['lastlogoff']</td><td>".$steamprofile['lastlogoff']."</td><td><a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> of the user's last logoff</td></tr>
 	<tr><td>\$steamprofile['profileurl']</td><td>".$steamprofile['profileurl']."</td><td>Link to the user's profile</td></tr>
 	<tr><td>\$steamprofile['personastate']</td><td>".$steamprofile['personastate']."</td><td>0 - Offline, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play</td></tr>
-	<tr><td>\$steamprofile['realname']</td><td>".$steamprofile['realname']."</td><td>&qout;Real&qout; name</td></tr>
+	<tr><td>\$steamprofile['realname']</td><td>".$steamprofile['realname']."</td><td>\"Real\" name</td></tr>
 	<tr><td>\$steamprofile['primaryclanid']</td><td>".$steamprofile['primaryclanid']."</td><td>The ID of the user's primary group</td></tr>
 	<tr><td>\$steamprofile['timecreated']</td><td>".$steamprofile['timecreated']."</td><td><a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> for the time the user's account was created</td></tr>
 	<tr><td>\$steamprofile['avatar']</td><td><img src='".$steamprofile['avatar']."'><br>".$steamprofile['avatar']."</td><td>Adress of the user's 32x32px avatar</td></tr>

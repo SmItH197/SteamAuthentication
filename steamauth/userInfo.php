@@ -1,8 +1,6 @@
 <?php
-
-    $api_key = ""; // Insert API Key here!
-
-    if (empty($_SESSION['steam_uptodate']) or $_SESSION['steam_uptodate'] == false) {
+	include("settings.php");
+    if (empty($_SESSION['steam_uptodate']) or $_SESSION['steam_uptodate'] == false or empty($_SESSION['steam_personaname'])) {
         $url = file_get_contents("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$api_key."&steamids=".$_SESSION['steamid']); 
         $content = json_decode($url, true);
         $_SESSION['steam_steamid'] = $content['response']['players'][0]['steamid'];

@@ -10,15 +10,13 @@ function logoutbutton() {
 function steamlogin()
 {
 try {
-    // Change 'localhost' to your domain name.
-    $openid = new LightOpenID('example.com');
+	require("settings.php");
+    $openid = new LightOpenID($domainname);
     
     $button['small'] = "small";
     $button['large_no'] = "large_noborder";
     $button['large'] = "large_border";
-    
-    // Choose your login button style here
-    $button = $button['large'];
+    $button = $button[$button_style];
     
     if(!$openid->mode) {
         if(isset($_GET['login'])) {

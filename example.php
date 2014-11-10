@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SteamAuth Demo</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body style="background-color: #EEE;">
-    <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
-		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.0</span>
-		<hr>
-		<?php
-		require ('steamauth/steamauth.php'); 
+<?php
+    require ('steamauth/steamauth.php');  
+    
+	# You would uncomment the line beneath to make it refresh the data every time the page is loaded
+	// $_SESSION['steam_uptodate'] = false;
+?>
+<html>
+<head>
+    <title>page</title>
+</head>
+<body>
+<?php
 if(!isset($_SESSION['steamid'])) {
-    echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!";
-    steamlogin();
-	echo "</div>";
-	}  else {
+
+    echo "welcome guest! please login \n \n";
+    steamlogin(); //login button
+    
+}  else {
     include ('steamauth/userInfo.php');
+<<<<<<< HEAD
     echo "<div style='float:left;'><a href='https://github.com/SmItH197/SteamAuthentication'><button type='button' class='btn btn-success' style='margin: 2px 3px;'>GitHub Repo</button></a><a href='https://github.com/SmItH197/SteamAuthentication/releases'><button type='button' style='margin: 2px 3px;' class='btn btn-warning'>Download</button></a></div><br><br>
 	<h4 style='margin-bottom: 3px; float:left;'>Steam WebAPI-Output:</h4><span style='float:right;'><a href='steamauth/logout.php'>Log out</a></span>
 	<table class='table table-striped'><tr><td><b>Variable name</b></td><td><b>Value</b></td><td><b>Description</b></td></tr>
@@ -57,4 +46,15 @@ if(!isset($_SESSION['steamid'])) {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   </body>
+=======
+
+    //Protected content
+    echo "Welcome back " . $steamprofile['personaname'] . "</br>";
+    echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title="" alt="" />'; // Display their avatar!
+    
+    logoutbutton();
+}    
+?>  
+</body>
+>>>>>>> parent of 216edbb... Styled example.php that lists all variables
 </html>

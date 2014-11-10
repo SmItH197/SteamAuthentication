@@ -49,7 +49,7 @@ if(!isset($_SESSION['steamid'])) {
 	}    
 	?>
 	<hr>
-	<div class="pull-right"><i>This page uses Bootstrap because it's fancy</i></div>
+	<div class="pull-right"><i>This page is powered by <a href="http://steampowered.com">Steam</a></i></div>
 	<a href="https://github.com/SmItH197/SteamAuthentication">GitHub Repo</a><br>
 	Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

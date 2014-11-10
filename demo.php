@@ -1,3 +1,6 @@
+<?php
+    require ('steamauth/steamauth.php');  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +25,6 @@
 		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.0</span>
 		<hr>
 		<?php
-		require ('steamauth/steamauth.php'); 
 if(!isset($_SESSION['steamid'])) {
     echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!";
     steamlogin();

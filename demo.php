@@ -1,5 +1,8 @@
 <?php
     require ('steamauth/steamauth.php');  
+    
+	# You would uncomment the line beneath to make it refresh the data every time the page is loaded
+	// $_SESSION['steam_uptodate'] = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +47,9 @@ if(!isset($_SESSION['steamid'])) {
 	<tr><td>\$steamprofile['realname']</td><td>".$steamprofile['realname']."</td><td>\"Real\" name</td></tr>
 	<tr><td>\$steamprofile['primaryclanid']</td><td>".$steamprofile['primaryclanid']."</td><td>The ID of the user's primary group</td></tr>
 	<tr><td>\$steamprofile['timecreated']</td><td>".$steamprofile['timecreated']."</td><td><a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> for the time the user's account was created</td></tr>
-	<tr><td>\$steamprofile['avatar']</td><td><img src='".$steamprofile['avatar']."'><br>".$steamprofile['avatar']."</td><td>Adress of the user's 32x32px avatar</td></tr>
-	<tr><td>\$steamprofile['avatarmedium']</td><td><img src='".$steamprofile['avatarmedium']."'><br>".$steamprofile['avatarmedium']."</td><td>Adress of the user's 64x64px avatar</td></tr>
-	<tr><td>\$steamprofile['avatarfull']</td><td><img src='".$steamprofile['avatarfull']."'><br>".$steamprofile['avatarfull']."</td><td>Adress of the user's 184x184px avatar</td></tr>
+	<tr><td>\$steamprofile['avatar']</td><td><img src='".$steamprofile['avatar']."'><br><a href=".$steamprofile['avatar'].">URL Address</a></td><td>Adress of the user's 32x32px avatar</td></tr>
+	<tr><td>\$steamprofile['avatarmedium']</td><td><img src='".$steamprofile['avatarmedium']."'><br><a href=".$steamprofile['avatarmedium'].">URL Address</a></td><td>Adress of the user's 64x64px avatar</td></tr>
+	<tr><td>\$steamprofile['avatarfull']</td><td><img src='".$steamprofile['avatarfull']."'><br><a href=".$steamprofile['avatarfull'].">URL Address</a></td><td>Adress of the user's 184x184px avatar</td></tr>
 	</table>";
 	}    
 	?>

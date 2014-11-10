@@ -18,6 +18,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .table {
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+    </style>
   </head>
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
@@ -44,9 +50,9 @@ if(!isset($_SESSION['steamid'])) {
 	<tr><td>\$steamprofile['realname']</td><td>".$steamprofile['realname']."</td><td>\"Real\" name</td></tr>
 	<tr><td>\$steamprofile['primaryclanid']</td><td>".$steamprofile['primaryclanid']."</td><td>The ID of the user's primary group</td></tr>
 	<tr><td>\$steamprofile['timecreated']</td><td>".$steamprofile['timecreated']."</td><td><a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> for the time the user's account was created</td></tr>
-	<tr><td>\$steamprofile['avatar']</td><td><img src='".$steamprofile['avatar']."'><br><a href=".$steamprofile['avatar'].">URL Address</a></td><td>Adress of the user's 32x32px avatar</td></tr>
-	<tr><td>\$steamprofile['avatarmedium']</td><td><img src='".$steamprofile['avatarmedium']."'><br><a href=".$steamprofile['avatarmedium'].">URL Address</a></td><td>Adress of the user's 64x64px avatar</td></tr>
-	<tr><td>\$steamprofile['avatarfull']</td><td><img src='".$steamprofile['avatarfull']."'><br><a href=".$steamprofile['avatarfull'].">URL Address</a></td><td>Adress of the user's 184x184px avatar</td></tr>
+	<tr><td>\$steamprofile['avatar']</td><td><img src='".$steamprofile['avatar']."'><br>".$steamprofile['avatar']."</td><td>Adress of the user's 32x32px avatar</td></tr>
+	<tr><td>\$steamprofile['avatarmedium']</td><td style=''><img src='".$steamprofile['avatarmedium']."'><br>".$steamprofile['avatarmedium']."</td><td>Adress of the user's 64x64px avatar</td></tr>
+	<tr><td>\$steamprofile['avatarfull']</td><td><img src='".$steamprofile['avatarfull']."'><br>".$steamprofile['avatarfull']."</td><td>Adress of the user's 184x184px avatar</td></tr>
 	</table>";
 	}    
 	?>

@@ -38,8 +38,6 @@ try {
                 $_SESSION['steamid'] = $matches[1]; 
                  if (isset($steamauth['loginpage'])) {
 					header('Location: '.$steamauth['loginpage']);
-				 } else {
-					header('Location: '.$_SERVER['REQUEST_URI']);
                  }
         } else {
                 echo "User is not logged in.\n";

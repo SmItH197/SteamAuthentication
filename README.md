@@ -18,7 +18,7 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up `settings.php` and change `$domainname` to your domain name.
+Open up `settings.php` and change `domainname` to your domain name.
 Add your API-Key from http://steamcommunity.com/dev/apikey
 
 Now in your file add the following at the top:
@@ -51,17 +51,17 @@ By default, the logout button redirects to the root of the current folder, this 
 
 ###Choosing a login button style
 
-You can choose the style of the login button by opening the settings and changing the value of `$button_style` to one of the following:
+You can choose the style of the login button by opening the settings and changing the value of `buttonstyle` to one of the following:
 
-`$button_style = "small";` 
+`buttonstyle = "small";` 
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png)
 
-`$button_style = "large_no";`
+`buttonstyle = "large_no";`
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
 
-`$button_style = "large";`
+`buttonstyle = "large";`
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png)
 

@@ -8,12 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SteamAuth Demo</title>
-
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -28,7 +23,7 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.0</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.1</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {
@@ -60,9 +55,7 @@ if(!isset($_SESSION['steamid'])) {
 	<div class="pull-right"><i>This page is powered by <a href="http://steampowered.com">Steam</a></i></div>
 	<a href="https://github.com/SmItH197/SteamAuthentication">GitHub Repo</a><br>
 	Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a></div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   </body>
 </html>

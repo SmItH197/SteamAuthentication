@@ -11,12 +11,12 @@ function steamlogin()
 {
 try {
 	require("settings.php");
-    $openid = new LightOpenID($domainname);
+    $openid = new LightOpenID($steamauth['domainname']);
     
     $button['small'] = "small";
     $button['large_no'] = "large_noborder";
     $button['large'] = "large_border";
-    $button = $button[$button_style];
+    $button = $button[$steamauth['buttonstyle']];
     
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
@@ -36,9 +36,9 @@ try {
               
                 session_start();
                 $_SESSION['steamid'] = $matches[1]; 
-                
-                 header('Location: '.$_SERVER['REQUEST_URI']);
-                 
+                 if (isset($steamauth['loginpage'])) {
+					header('Location: '.$steamauth['loginpage']);
+                 }
         } else {
                 echo "User is not logged in.\n";
         }

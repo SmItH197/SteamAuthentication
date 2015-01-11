@@ -1,12 +1,12 @@
 <?php
-$api_key = ""; // Your Steam WebAPI-Key found at http://steamcommunity.com/dev/apikey
-$domainname = ""; // The main URL of your website displayed in the login page
-$button_style = ""; // Style of the login button [small|large_no|large]
-$logout_page = ""; // Page to redirect to after a successfull logout (from the root folder of your website)
+$steamauth['apikey'] = ""; // Your Steam WebAPI-Key found at http://steamcommunity.com/dev/apikey
+$steamauth['domainname'] = ""; // The main URL of your website displayed in the login page
+$steamauth['buttonstyle'] = ""; // Style of the login button [small|large_no|large]
+$steamauth['logoutpage'] = ""; // Page to redirect to after a successfull logout (from the directory the SteamAuth-folder is located in) - NO slash at the beginning!
+$steamauth['loginpage'] = ""; // Page to redirect to after a successfull login (from the directory the SteamAuth-folder is located in) - NO slash at the beginning!
 
 // System stuff
-if (empty($api_key)) {die("<div style='display: block; width: 100%; background-color: red; text-align: center;'>SteamAuth:<br>Please supply a API-Key!</div>");}
-if (empty($domainname)) {$domainname = "localhost";}
-if ($button_style != "small" and $button_style != "large_no" and $button_style != "large") {$button_style = "large_no";}
-$logout_page = "../".$logout_page;
+if (empty($steamauth['apikey'])) {die("<div style='display: block; width: 100%; background-color: red; text-align: center;'>SteamAuth:<br>Please supply an API-Key!</div>");}
+if (empty($steamauth['domainname'])) {$steamauth['domainname'] = "localhost";}
+if ($steamauth['buttonstyle'] != "small" and $steamauth['buttonstyle'] != "large") {$steamauth['buttonstyle'] = "large_no";}
 ?>

@@ -13,7 +13,11 @@
         $_SESSION['steam_avatarmedium'] = $content['response']['players'][0]['avatarmedium'];
         $_SESSION['steam_avatarfull'] = $content['response']['players'][0]['avatarfull'];
         $_SESSION['steam_personastate'] = $content['response']['players'][0]['personastate'];
-        $_SESSION['steam_realname'] = $content['response']['players'][0]['realname'];
+        if (isset($content['response']['players'][0]['realname'])) { 
+	           $_SESSION['steam_realname'] = $content['response']['players'][0]['realname'];
+	       } else {
+	           $_SESSION['steam_realname'] = "Real name not given";
+        }
         $_SESSION['steam_primaryclanid'] = $content['response']['players'][0]['primaryclanid'];
         $_SESSION['steam_timecreated'] = $content['response']['players'][0]['timecreated'];
         $_SESSION['steam_uptodate'] = true;

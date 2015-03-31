@@ -1,3 +1,7 @@
+`Because we had several people asking basic PHP questions in the issues of this library:
+Issues are meant to keep track of bugs and mistakes in the code and not as a questionboard!
+If you have any questions regarding the use of this library, read through the demo code and the README (which you are reading right now, congrats!)`
+
 #SteamAuthentication
 
 SteamAuthentication is a basic set of PHP files that enable users to login using their steam account to view protected content on your website. it creates a session using their steamid as the sessionID and checks for the session when a user visits the page. It also includes a file which allows you to use their profile information such as their avatar and online status.

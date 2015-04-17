@@ -6,7 +6,7 @@
         $_SESSION['steam_steamid'] = $content['response']['players'][0]['steamid'];
         $_SESSION['steam_communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];
         $_SESSION['steam_profilestate'] = $content['response']['players'][0]['profilestate'];
-        $_SESSION['steam_personaname'] = $content['response']['players'][0]['personaname'];
+        $_SESSION['steam_personaname'] = mysql_real_escape_string($content['response']['players'][0]['personaname']);
         $_SESSION['steam_lastlogoff'] = $content['response']['players'][0]['lastlogoff'];
         $_SESSION['steam_profileurl'] = $content['response']['players'][0]['profileurl'];
         $_SESSION['steam_avatar'] = $content['response']['players'][0]['avatar'];
@@ -14,7 +14,7 @@
         $_SESSION['steam_avatarfull'] = $content['response']['players'][0]['avatarfull'];
         $_SESSION['steam_personastate'] = $content['response']['players'][0]['personastate'];
         if (isset($content['response']['players'][0]['realname'])) { 
-	           $_SESSION['steam_realname'] = $content['response']['players'][0]['realname'];
+	           $_SESSION['steam_realname'] = mysql_real_escape_string($content['response']['players'][0]['realname']);
 	       } else {
 	           $_SESSION['steam_realname'] = "Real name not given";
         }

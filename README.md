@@ -14,6 +14,8 @@ Thanks goes to:
 - JTX for the original steam openid script (http://pastebin.com/6vZT4RhD)
 - The LightopenID library (http://gitorious.org/lightopenid)
 
+**Using MySQL?** Don't forget to sanitise your inputs!
+
 ##To Install
 
 Upload the `steamauth` folder.

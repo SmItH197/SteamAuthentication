@@ -7,7 +7,7 @@
         if (empty($_SESSION['steam_uptodate']) or $_SESSION['steam_uptodate'] == false or empty($_SESSION['steam_personaname'])) {
             //We mute alerts from the following line because we do not want to give away our API key in case file_get_contents() throws a warning.
             @ $url = file_get_contents("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$steamauth['apikey']."&steamids=".$_SESSION['steamid']);
-            if($url === FALSE) { echo('Error: failed to fetch content form Steam. It may be down');die(); }
+            if($url === FALSE) { echo('Error: failed to fetch content form Steam. It may be down. Please, try again later.');die(); }
             $content = json_decode($url, true);
             $_SESSION['steam_steamid'] = $content['response']['players'][0]['steamid'];
             $_SESSION['steam_communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];

@@ -7,9 +7,6 @@ function logoutbutton() {
     echo "<form action=\"steamauth/logout.php\" method=\"post\"><input value=\"Logout\" type=\"submit\" /></form>"; //logout button
 }
 
-//More flexible way of adding a logout button
-define('STEAMAUTH_LOGOUT_LINK', "steamauth/logout.php");
-
 function steamlogin()
 {
 try {

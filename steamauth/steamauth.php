@@ -24,7 +24,7 @@ try {
             header('Location: ' . $openid->authUrl());
         }
 
-    return "<form action=\"?login".(($aditionalVars === '') ? '' : '&'.$aditionalVars)."\" method=\"post\"> <input type=\"image\" src=\"http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_".$button.".png\"></form>";
+    return "<form action=\"?login".(($aditionalVars === '') ? '' : '&'.http_build_query($aditionalVars))."\" method=\"post\"> <input type=\"image\" src=\"http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_".$button.".png\"></form>";
     }
 
      elseif($openid->mode == 'cancel') {

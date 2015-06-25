@@ -25,27 +25,53 @@ Add your API-Key from http://steamcommunity.com/dev/apikey
 
 Now in your file add the following at the top:
 
-    <?php
+```php
+<?php
 
-    require 'steamauth/steamauth.php';
-    
-    ?>
+require 'steamauth/steamauth.php';
+
+?>
+```
     
 And where you want the protected content to be:
 
-    <?php
-    if(!isset($_SESSION['steamid'])) {
+```php
+<?php
+if(!isset($_SESSION['steamid'])) {
 
-        steamlogin(); //login button
-    
-    }  else {
-    
-        include ('steamauth/userInfo.php'); //To access the $steamprofile array
-        //Protected content
+    echo steamlogin(); //login button
 
-        logoutbutton(); //Logout Button
-    }     
-    ?>
+}  else {
+
+    include ('steamauth/userInfo.php'); //To access the $steamprofile array
+    //Protected content
+
+    logoutbutton(); //Logout Button
+}     
+?>
+```
+
+You can also pass variables to ```steamlogin()``` to get them back once the user logs in by sending them as an array.
+
+```php
+<?php
+if(!isset($_SESSION['steamid'])) {
+
+    $vars = array('foo' => 'bar', 'some' => 'thing');
+    echo steamlogin($vars); //login button
+
+}  else {
+
+    include ('steamauth/userInfo.php'); //To access the $steamprofile array
+    //Protected content
+
+    echo $_GET['foo']; //Outputs bar
+    echo $_GET['some']; //Outputs thing
+
+    logoutbutton(); //Logout Button
+}     
+?>
+```
 
 By default, the logout button redirects to the root of the current folder, this can be changed in the settings.
 

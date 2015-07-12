@@ -23,7 +23,7 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.2</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.3</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {

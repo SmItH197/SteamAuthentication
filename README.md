@@ -51,28 +51,6 @@ if(!isset($_SESSION['steamid'])) {
 ?>
 ```
 
-You can also pass variables to ```steamlogin()``` to get them back once the user logs in by sending them as an array.
-
-```php
-<?php
-if(!isset($_SESSION['steamid'])) {
-
-    $vars = array('foo' => 'bar', 'some' => 'thing');
-    echo steamlogin($vars); //login button
-
-}  else {
-
-    include ('steamauth/userInfo.php'); //To access the $steamprofile array
-    //Protected content
-
-    echo $_GET['foo']; //Outputs bar
-    echo $_GET['some']; //Outputs thing
-
-    logoutbutton(); //Logout Button
-}     
-?>
-```
-
 By default, the logout button redirects to the root of the current folder, this can be changed in the settings.
 
 #####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.

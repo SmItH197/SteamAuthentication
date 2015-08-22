@@ -28,7 +28,7 @@
 		<?php
 if(!isset($_SESSION['steamid'])) {
     echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!";
-    steamlogin();
+    echo steamlogin();
 	echo "</div>";
 	}  else {
     include ('steamauth/userInfo.php');

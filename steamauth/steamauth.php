@@ -38,7 +38,7 @@ try {
                 $_SESSION['steamid'] = $matches[1]; 
 
                 // First determine of the $steamauth['loginpage'] has been set, if yes then redirect there. If not redirect to where they came from
-                if(isset($steamauth['loginpage'])) {
+                if($steamauth['loginpage'] !== "") {
                     $returnTo = $steamauth['loginpage'];
                 } else {
                     //Determine the return to page. We substract "login&"" to remove the login var from the URL.

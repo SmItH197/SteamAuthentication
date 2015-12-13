@@ -13,7 +13,7 @@
 if(!isset($_SESSION['steamid'])) {
 
     echo "welcome guest! please login \n \n";
-    echo steamlogin(); //login button
+    steamlogin(); //login button
     
 }  else {
     include ('steamauth/userInfo.php');

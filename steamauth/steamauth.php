@@ -34,7 +34,6 @@ try {
                 $ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
                 preg_match($ptn, $id, $matches);
               
-                session_start();
                 $_SESSION['steamid'] = $matches[1]; 
                  if (isset($steamauth['loginpage'])) {
 					header('Location: '.$steamauth['loginpage']);

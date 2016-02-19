@@ -1,4 +1,5 @@
 <?php
+//Version 3.0
 $steamauth['apikey'] = ""; // Your Steam WebAPI-Key found at http://steamcommunity.com/dev/apikey
 $steamauth['domainname'] = ""; // The main URL of your website displayed in the login page
 $steamauth['buttonstyle'] = ""; // Style of the login button [small|large_no|large]

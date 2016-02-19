@@ -1,3 +1,4 @@
+<!--Version 3.0--> 
 <?php
     require ('steamauth/steamauth.php');  
 ?>

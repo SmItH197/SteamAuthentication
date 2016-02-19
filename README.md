@@ -23,7 +23,7 @@ Upload the `steamauth` folder.
 Open up `settings.php` and change `domainname` to your domain name.
 Add your API-Key from http://steamcommunity.com/dev/apikey
 
-Now in your file add the following at the top:
+Now in the page that you would like to use the steamauth library, add the following at the top:
 
     <?php
 

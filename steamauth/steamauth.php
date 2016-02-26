@@ -35,9 +35,11 @@ try {
                 preg_match($ptn, $id, $matches);
               
                 $_SESSION['steamid'] = $matches[1]; 
-                 if (isset($steamauth['loginpage'])) {
+                 if (!empty($steamauth['loginpage'])) {
 					header('Location: '.$steamauth['loginpage']);
-                 }
+                 } else {
+					header('Location: '.$_SERVER['PHP_SELF']);
+				 }
         } else {
                 echo "User is not logged in.\n";
         }

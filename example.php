@@ -1,4 +1,4 @@
-<!--Version 3.0-->
+<!--Version 3.1-->
 
 <?php
     require ('steamauth/steamauth.php');  
@@ -14,15 +14,15 @@
 <?php
 if(!isset($_SESSION['steamid'])) {
 
-    echo "welcome guest! please login \n \n";
-    steamlogin(); //login button
+    echo "welcome guest! please login<br><br>";
+    loginbutton(); //login button
     
 }  else {
     include ('steamauth/userInfo.php');
 
     //Protected content
     echo "Welcome back " . $steamprofile['personaname'] . "</br>";
-    echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title="" alt="" />'; // Display their avatar!
+    echo "here is your avatar: </br>" . '<img src="'.$steamprofile['avatarfull'].'" title="" alt="" /><br>'; // Display their avatar!
     
     logoutbutton();
 }    

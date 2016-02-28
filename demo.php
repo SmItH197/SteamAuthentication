@@ -1,6 +1,7 @@
-<!--Version 3.1--> 
 <?php
     require ('steamauth/steamauth.php');  
+	# You would uncomment the line beneath to make it refresh the data every time the page is loaded
+	// unset($_SESSION['steam_uptodate']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.1.2</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.0</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {
@@ -147,3 +148,4 @@ if(!isset($_SESSION['steamid'])) {
 	</div>
   </body>
 </html>
+<!--Version 3.0-->

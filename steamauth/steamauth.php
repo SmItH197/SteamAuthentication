@@ -46,8 +46,8 @@ if (isset($_GET['login'])){
 
 if (isset($_GET['logout'])){
 	include("settings.php");
-	unset($_SESSION['steamid']);
-	unset($_SESSION['steam_uptodate']);
+	session_unset();
+	session_destroy();
 	header('Location: '.$steamauth['logoutpage']);
 }
 

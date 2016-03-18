@@ -25,29 +25,29 @@ Open up `settings.php`
 - change `apikey` to your API-Key from http://steamcommunity.com/dev/apikey
 
 Now in your file add the following at the top:
+```php
+<?php
 
-    <?php
+require 'steamauth/steamauth.php';
 
-    require 'steamauth/steamauth.php';
-    
-    ?>
-    
+?>
+```
 And where you want the protected content to be:
+```php
+<?php
+if(!isset($_SESSION['steamid'])) {
 
-    <?php
-    if(!isset($_SESSION['steamid'])) {
+    loginbutton(); //login button
 
-        loginbutton(); //login button
-    
-    }  else {
-    
-        include ('steamauth/userInfo.php'); //To access the $steamprofile array
-        //Protected content
+}  else {
 
-        logoutbutton(); //Logout Button
-    }     
-    ?>
+    include ('steamauth/userInfo.php'); //To access the $steamprofile array
+    //Protected content
 
+    logoutbutton(); //Logout Button
+}     
+?>
+```
 By default, the logout & login buttons reload the current page, this can be changed in the settings.
 
 #####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.

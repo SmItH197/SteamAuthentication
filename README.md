@@ -20,50 +20,58 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up `settings.php` and change `domainname` to your domain name.
-Add your API-Key from http://steamcommunity.com/dev/apikey
+Open up `settings.php` 
+- change `domainname` to your domain name.
+- change `apikey` to your API-Key from http://steamcommunity.com/dev/apikey
+
 
 Now in the page that you would like to use the steamauth library, add the following at the top:
 
-    <?php
+```php
+<?php
 
-    require 'steamauth/steamauth.php';
-    
-    ?>
-    
+require 'steamauth/steamauth.php';
+
+?>
+```
 And where you want the protected content to be:
+```php
+<?php
+if(!isset($_SESSION['steamid'])) {
 
-    <?php
-    if(!isset($_SESSION['steamid'])) {
+    loginbutton(); //login button
 
-        steamlogin(); //login button
-    
-    }  else {
-    
-        include ('steamauth/userInfo.php'); //To access the $steamprofile array
-        //Protected content
+}  else {
 
-        logoutbutton(); //Logout Button
-    }     
-    ?>
+    include ('steamauth/userInfo.php'); //To access the $steamprofile array
+    //Protected content
 
-By default, the logout button redirects to the root of the current folder, this can be changed in the settings.
+    logoutbutton(); //Logout Button
+}     
+?>
+```
+By default, the logout & login buttons reload the current page, this can be changed in the settings.
 
 #####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 
 ###Choosing a login button style
 
-You can choose the style of the login button by opening the settings and changing the value of `buttonstyle` to one of the following:
+by default `loginbutton();` will display ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
 
-`buttonstyle = "small";` 
+You can choose the style of the login button by specifying a variable like the following:
+
+loginbutton("small"); 
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png)
 
-`buttonstyle = "large_no";`
+
+loginbutton();
+-OR-
+loginbutton("large_no"); 
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
 
-`buttonstyle = "large";`
+loginbutton("large"); 
 
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png)
 
@@ -82,10 +90,10 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)
 * `$steamprofile['avatarfull']` - The image URL to the largest size of their avatar (184px x 184px)
 * `$steamprofile['personastate']` - The users current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
-* `$steamprofile['realname']` - Get the real name
+* `$steamprofile['realname']` - The users "real" name
 * `$steamprofile['primaryclanid']` - The users primary group
 * `$steamprofile['timecreated']` - When the account was created
-* `$_SESSION['steam_uptodate']` - Set to false to refresh data from Steam
+* `$_SESSION['steam_uptodate']` - Unset to refresh data from Steam
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
 

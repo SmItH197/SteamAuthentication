@@ -18,7 +18,7 @@ function loginbutton($buttonstyle = "large_no") {
 
 if (isset($_GET['login'])){
 	try {
-		require("settings.php");
+		require("SteamConfig.php");
 		$openid = new LightOpenID($steamauth['domainname']);
 		
 		
@@ -34,7 +34,17 @@ if (isset($_GET['login'])){
 				preg_match($ptn, $id, $matches);
 			  
 				$_SESSION['steamid'] = $matches[1]; 
-				header('Location: '.$steamauth['loginpage']);
+				if (!headers_sent()) {
+                    header('Location: '.$steamauth['loginpage']);
+                    exit;
+                } else {
+				    echo '<script type="text/javascript">';
+                    echo 'window.location.href="'.$steamauth['loginpage'].'";';
+                    echo '</script>';
+                    echo '<noscript>';
+                    echo '<meta http-equiv="refresh" content="0;url='.$steamauth['loginpage'].'" />';
+                    echo '</noscript>'; exit;
+                }
 			} else {
 				echo "User is not logged in.\n";
 			}
@@ -45,7 +55,7 @@ if (isset($_GET['login'])){
 }
 
 if (isset($_GET['logout'])){
-	include("settings.php");
+	include("SteamConfig.php");
 	session_unset();
 	session_destroy();
 	header('Location: '.$steamauth['logoutpage']);

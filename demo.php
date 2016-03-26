@@ -1,4 +1,3 @@
-<!--Version 3.1--> 
 <?php
     require ('steamauth/steamauth.php');  
 ?>
@@ -24,12 +23,12 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 2.1.2</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.2</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {
-    echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!";
-    steamlogin();
+    echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!<br>";
+    loginbutton();
 	echo "</div>";
 	}  else {
     include ('steamauth/userInfo.php');
@@ -44,7 +43,7 @@ if(!isset($_SESSION['steamid'])) {
 		</div>
 		<br>
 		<br>
-		<h4 style='margin-bottom: 3px; float:left;'>Steam WebAPI-Output:</h4><span style='float:right;'><a href='steamauth/logout.php'>Log out</a></span>
+		<h4 style='margin-bottom: 3px; float:left;'>Steam WebAPI-Output:</h4><span style='float:right;'><?php logoutbutton(); ?></span>
 		<table class='table table-striped'>
 			<tr>
 				<td><b>Variable name</b></td>
@@ -147,5 +146,7 @@ if(!isset($_SESSION['steamid'])) {
 		<a href="https://github.com/SmItH197/SteamAuthentication">GitHub Repo</a><br>
 		Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a>
 	</div>
+	
+	<!--Version 3.1--> 
   </body>
 </html>

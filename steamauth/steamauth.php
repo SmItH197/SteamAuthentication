@@ -35,16 +35,16 @@ if (isset($_GET['login'])){
 			  
 				$_SESSION['steamid'] = $matches[1]; 
 				if (!headers_sent()) {
-                    header('Location: '.$steamauth['loginpage']);
-                    exit;
-                } else {
-				    echo '<script type="text/javascript">';
-                    echo 'window.location.href="'.$steamauth['loginpage'].'";';
-                    echo '</script>';
-                    echo '<noscript>';
-                    echo '<meta http-equiv="refresh" content="0;url='.$steamauth['loginpage'].'" />';
-                    echo '</noscript>'; exit;
-                }
+                    			header('Location: '.$steamauth['loginpage']);
+                    			exit;
+                		} else {
+					echo '<script type="text/javascript">';
+                    			echo 'window.location.href="'.$steamauth['loginpage'].'";';
+                    			echo '</script>';
+                    			echo '<noscript>';
+                    			echo '<meta http-equiv="refresh" content="0;url='.$steamauth['loginpage'].'" />';
+                    			echo '</noscript>'; exit;
+                		}
 			} else {
 				echo "User is not logged in.\n";
 			}

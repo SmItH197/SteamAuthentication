@@ -20,7 +20,7 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up `settings.php` 
+Open up `SteamConfig.php` 
 - change `domainname` to your domain name.
 - change `apikey` to your API-Key from http://steamcommunity.com/dev/apikey
 
@@ -50,7 +50,7 @@ if(!isset($_SESSION['steamid'])) {
 }     
 ?>
 ```
-By default, the logout & login buttons reload the current page, this can be changed in the settings.
+By default, the logout & login buttons reload the current page, this can be changed in the SteamConfig file.
 
 #####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 

@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require ('openid.php');
+require 'openid.php';
 
 function logoutbutton() {
     echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
@@ -18,9 +18,8 @@ function loginbutton($buttonstyle = "large_no") {
 
 if (isset($_GET['login'])){
 	try {
-		require("SteamConfig.php");
+		require 'SteamConfig.php';
 		$openid = new LightOpenID($steamauth['domainname']);
-		
 		
 		if(!$openid->mode) {
 			$openid->identity = 'http://steamcommunity.com/openid';
@@ -35,16 +34,19 @@ if (isset($_GET['login'])){
 			  
 				$_SESSION['steamid'] = $matches[1]; 
 				if (!headers_sent()) {
-                    			header('Location: '.$steamauth['loginpage']);
-                    			exit;
-                		} else {
-					echo '<script type="text/javascript">';
-                    			echo 'window.location.href="'.$steamauth['loginpage'].'";';
-                    			echo '</script>';
-                    			echo '<noscript>';
-                    			echo '<meta http-equiv="refresh" content="0;url='.$steamauth['loginpage'].'" />';
-                    			echo '</noscript>'; exit;
-                		}
+					header('Location: '.$steamauth['loginpage']);
+					exit;
+                } else {
+					?>
+					<script type="text/javascript">
+						window.location.href="<?=$steamauth['loginpage']?>";
+					</script>
+					<noscript>
+						<meta http-equiv="refresh" content="0;url=<?=$steamauth['loginpage']?>" />
+					</noscript>
+					<?php
+					exit;
+                }
 			} else {
 				echo "User is not logged in.\n";
 			}
@@ -55,15 +57,17 @@ if (isset($_GET['login'])){
 }
 
 if (isset($_GET['logout'])){
-	include("SteamConfig.php");
+	require 'SteamConfig.php';
 	session_unset();
 	session_destroy();
 	header('Location: '.$steamauth['logoutpage']);
+	exit;
 }
 
-if (isset($_GET['update'])){
+if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['steam_uptodate']+(24*60*60) < time()){ 
 	unset($_SESSION['steam_uptodate']);
-	include("userinfo.php");
+	require 'userInfo.php';
 	header('Location: '.$_SERVER['PHP_SELF']);
+	exit;
 }
 ?>

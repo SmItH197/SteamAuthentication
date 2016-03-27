@@ -78,7 +78,7 @@ loginbutton("large");
     
 ##Using Profile Variables
 
-I have create a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
+I have created a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
 
 * `$steamprofile['steamid']` - The users unique SteamID
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
@@ -93,9 +93,16 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['realname']` - The users "real" name
 * `$steamprofile['primaryclanid']` - The users primary group
 * `$steamprofile['timecreated']` - When the account was created
-* `$_SESSION['steam_uptodate']` - Unset to refresh data from Steam
+* `$_SESSION['steam_uptodate']` - When profile information was last updated in unix time - Unset to refresh data from Steam
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
+
+#### Update User Information
+
+To get updated steam profile use 
+html: `<a href="?update">update</a>` - recommended
+-OR-
+php: `$_GET['update']=true;` - this must be set before `require 'steamauth/steamauth.php';`
 
 * For more help on laying out the document or using the $steamprofile variable see the example.php file!
 

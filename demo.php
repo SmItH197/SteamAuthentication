@@ -52,58 +52,49 @@ if(!isset($_SESSION['steamid'])) {
 			</tr>
 			<tr>
 				<td>$steamprofile['steamid']</td>
-				<td><?=$steamprofile['steamid']?>
-				</td>
+				<td><?=$steamprofile['steamid']?></td>
 				<td>SteamID64 of the user</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['communityvisibilitystate']</td>
-				<td><?=$steamprofile['communityvisibilitystate']?>
-				</td>
+				<td><?=$steamprofile['communityvisibilitystate']?></td>
 				<td>1 - Account not visible; 3 - Account is public (Depends on the relationship of your account to the others)</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['profilestate']</td>
-				<td><?=$steamprofile['profilestate']?>
-				</td>
+				<td><?=$steamprofile['profilestate']?></td>
 				<td>1 - The user has a Steam Community profile; 0 - if not</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['personaname']</td>
-				<td><?=$steamprofile['personaname']?>
-				</td>
+				<td><?=$steamprofile['personaname']?></td>
 				<td>Public name of the user</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['lastlogoff']</td>
-				<td><?=$steamprofile['lastlogoff']?>
-				</td>
+				<td><?=$steamprofile['lastlogoff']?></td>
 				<td>
 					<a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> of the user's last logoff
 				</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['profileurl']</td>
-				<td><?=$steamprofile['profileurl']?>
-				</td>
+				<td><?=$steamprofile['profileurl']?></td>
 				<td>Link to the user's profile</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['personastate']</td>
-				<td><?=$steamprofile['personastate']?>
-				</td>
+				<td><?=$steamprofile['personastate']?></td>
 				<td>0 - Offline, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['realname']</td>
-				<td><?=$steamprofile['realname']?>
-				</td>
+				<td><?=$steamprofile['realname']?></td>
 				<td>"Real" name</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['primaryclanid']</td>
-				<td><?=$steamprofile['primaryclanid']?>
-				</td>
+				<td><?=$steamprofile['primaryclanid']?></td>
 				<td>The ID of the user's primary group</td>
 			</tr>
 			<tr>
@@ -115,23 +106,33 @@ if(!isset($_SESSION['steamid'])) {
 				</td>
 			</tr>
 			<tr>
+				<td>$steamprofile['steam_uptodate']</td>
+				<td><?=$steamprofile['steam_uptodate']?></td>
+				<td>
+					<a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> for the time the user's account information was last updated
+				</td>
+			</tr>
+			<tr>
 				<td>$steamprofile['avatar']</td>
-				<td><img src='<?=$steamprofile['avatar']?>'><br>
-				<?=$steamprofile['avatar']?>
+				<td>
+					<img src='<?=$steamprofile['avatar']?>'><br>
+					<?=$steamprofile['avatar']?>
 				</td>
 				<td>Address of the user's 32x32px avatar</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['avatarmedium']</td>
-				<td><img src='<?=$steamprofile['avatarmedium']?>'><br>
-				<?=$steamprofile['avatarmedium']?>
+				<td>
+					<img src='<?=$steamprofile['avatarmedium']?>'><br>
+					<?=$steamprofile['avatarmedium']?>
 				</td>
 				<td>Address of the user's 64x64px avatar</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['avatarfull']</td>
-				<td><img src='<?=$steamprofile['avatarfull']?>'><br>
-				<?=$steamprofile['avatarfull']?>
+				<td>
+					<img src='<?=$steamprofile['avatarfull']?>'><br>
+					<?=$steamprofile['avatarfull']?>
 				</td>
 				<td>Address of the user's 184x184px avatar</td>
 			</tr>

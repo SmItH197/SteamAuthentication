@@ -1,7 +1,5 @@
 <?php
     require ('steamauth/steamauth.php');  
-	# You would uncomment the line beneath to make it refresh the data every time the page is loaded
-	// unset($_SESSION['steam_uptodate']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +13,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
+    <style>
         .table {
             table-layout: fixed;
             word-wrap: break-word;
@@ -25,25 +23,27 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.0</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.1.1</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {
     echo "<div style='margin: 30px auto; text-align: center;'>Welcome Guest! Please log in!<br>";
     loginbutton();
 	echo "</div>";
-}  else {
+	}  else {
     include ('steamauth/userInfo.php');
 	?>	
 		<div style='float:left;'>
-				<button formaction='https://github.com/SmItH197/SteamAuthentication/releases' type='submit' class='btn btn-success' style='margin: 2px 3px;' type='button'>GitHub Repo</button>
+			<a href='https://github.com/SmItH197/SteamAuthentication'>
+				<button class='btn btn-success' style='margin: 2px 3px;' type='button'>GitHub Repo</button>
+			</a>
 			<a href='https://github.com/SmItH197/SteamAuthentication/releases'>
 				<button class='btn btn-warning' style='margin: 2px 3px;' type='button'>Download</button>
 			</a>
 		</div>
 		<br>
 		<br>
-		<h4 style='margin-bottom: 3px; float:left;'>Steam WebAPI-Output:</h4><span style='float:right;'><?=logoutbutton()?></span>
+		<h4 style='margin-bottom: 3px; float:left;'>Steam WebAPI-Output:</h4><span style='float:right;'><?php logoutbutton(); ?></span>
 		<table class='table table-striped'>
 			<tr>
 				<td><b>Variable name</b></td>
@@ -116,21 +116,21 @@ if(!isset($_SESSION['steamid'])) {
 			</tr>
 			<tr>
 				<td>$steamprofile['avatar']</td>
-				<td><img src='<?=$steamprofile['avatar']?>' alt="user small avatar"><br>
+				<td><img src='<?=$steamprofile['avatar']?>'><br>
 				<?=$steamprofile['avatar']?>
 				</td>
 				<td>Address of the user's 32x32px avatar</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['avatarmedium']</td>
-				<td><img src='<?=$steamprofile['avatarmedium']?>' alt="user medium avatar"><br>
+				<td><img src='<?=$steamprofile['avatarmedium']?>'><br>
 				<?=$steamprofile['avatarmedium']?>
 				</td>
 				<td>Address of the user's 64x64px avatar</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['avatarfull']</td>
-				<td><img src='<?=$steamprofile['avatarfull']?>' alt="user large avatar"><br>
+				<td><img src='<?=$steamprofile['avatarfull']?>'><br>
 				<?=$steamprofile['avatarfull']?>
 				</td>
 				<td>Address of the user's 184x184px avatar</td>
@@ -146,6 +146,7 @@ if(!isset($_SESSION['steamid'])) {
 		<a href="https://github.com/SmItH197/SteamAuthentication">GitHub Repo</a><br>
 		Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a>
 	</div>
+	
+	<!--Version 3.1.1--> 
   </body>
 </html>
-<!--Version 3.0-->

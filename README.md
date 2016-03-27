@@ -2,7 +2,7 @@
 
 SteamAuthentication is a basic set of PHP files that enable users to login using their steam account to view protected content on your website. it creates a session using their steamid as the sessionID and checks for the session when a user visits the page. It also includes a file which allows you to use their profile information such as their avatar and online status.
 
-See a demo at http://bensmith.in/example.php
+See a demo at http://bensmith.in/demo.php
 
 ##Download
 
@@ -20,11 +20,13 @@ Thanks goes to:
 
 Upload the `steamauth` folder.
 
-Open up `settings.php` 
+Open up `SteamConfig.php` 
 - change `domainname` to your domain name.
 - change `apikey` to your API-Key from http://steamcommunity.com/dev/apikey
 
-Now in your file add the following at the top:
+
+Now in the page that you would like to use the steamauth library, add the following at the top:
+
 ```php
 <?php
 
@@ -48,7 +50,7 @@ if(!isset($_SESSION['steamid'])) {
 }     
 ?>
 ```
-By default, the logout & login buttons reload the current page, this can be changed in the settings.
+By default, the logout & login buttons reload the current page, this can be changed in the SteamConfig file.
 
 #####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 

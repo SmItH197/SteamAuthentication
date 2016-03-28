@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+require 'SteamConfig.php';
 
 function logoutbutton() {
     echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
@@ -18,7 +19,6 @@ function loginbutton($buttonstyle = "large_no") {
 if (isset($_GET['login'])){
 	require 'openid.php';
 	try {
-		require 'SteamConfig.php';
 		$openid = new LightOpenID($steamauth['domainname']);
 		
 		if(!$openid->mode) {
@@ -57,14 +57,13 @@ if (isset($_GET['login'])){
 }
 
 if (isset($_GET['logout'])){
-	require 'SteamConfig.php';
 	session_unset();
 	session_destroy();
 	header('Location: '.$steamauth['logoutpage']);
 	exit;
 }
 
-if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['steam_uptodate']+(24*60*60) < time()){ 
+if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['steam_uptodate']+$steamauth['updateinterval'] < time()){ 
 	unset($_SESSION['steam_uptodate']);
 	require 'userInfo.php';
 	header('Location: '.$_SERVER['PHP_SELF']);

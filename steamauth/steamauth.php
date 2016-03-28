@@ -1,7 +1,6 @@
 <?php
 ob_start();
 session_start();
-require 'openid.php';
 
 function logoutbutton() {
     echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
@@ -17,6 +16,7 @@ function loginbutton($buttonstyle = "large_no") {
 }
 
 if (isset($_GET['login'])){
+	require 'openid.php';
 	try {
 		require 'SteamConfig.php';
 		$openid = new LightOpenID($steamauth['domainname']);

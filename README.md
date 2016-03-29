@@ -93,7 +93,7 @@ I have created a userInfo.php file which creates an array of ready to use variab
 * `$steamprofile['realname']` - The users "real" name
 * `$steamprofile['primaryclanid']` - The users primary group
 * `$steamprofile['timecreated']` - When the account was created
-* `$_SESSION['steam_uptodate']` - When profile information was last updated in unix time - Unset to refresh data from Steam
+* `$_SESSION['steam_uptodate']` - When profile information was last updated in unix time
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
 
@@ -103,6 +103,20 @@ To get updated steam profile use
 html: `<a href="?update">update</a>` - recommended
 -OR-
 php: `$_GET['update']=true;` - this must be set before `require 'steamauth/steamauth.php';`
+
+###### automatically update user info if older than specified time when they next visit your site
+
+change line 67 of `steamauth.php` 
+From:
+```php
+if (isset($_GET['update'])){ 
+```
+To:
+```php
+if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['steam_uptodate']+(24*60*60) < time()){ 
+```
+ps: example shown would update if older than 24 hours
+pss: the numbers in the brackets `$_SESSION['steam_uptodate']+(24*60*60)` should be the maximum number of seconds before updating user info
 
 * For more help on laying out the document or using the $steamprofile variable see the example.php file!
 

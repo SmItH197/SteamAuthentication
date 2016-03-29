@@ -106,8 +106,8 @@ if(!isset($_SESSION['steamid'])) {
 				</td>
 			</tr>
 			<tr>
-				<td>$_SESSION['steam_uptodate']</td>
-				<td><?=$_SESSION['steam_uptodate']?></td>
+				<td>$steamprofile['uptodate']</td>
+				<td><?=$steamprofile['uptodate']?></td>
 				<td>
 					<a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> for the time the user's account information was last updated
 				</td>

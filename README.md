@@ -84,7 +84,7 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
 * `$steamprofile['profilestate']` - If set, indicates the user has a community profile configured (will be set to '1')
 * `$steamprofile['personaname']` - Their current set profile name
-* `$steamprofile['lastlogoff']` - Last time the user was online in unix time
+* `$steamprofile['lastlogoff']` - Last time the user was online in unix time (Check out the wiki for help on converting to date/time)
 * `$steamprofile['profileurl']` - The URL to their steam profile
 * `$steamprofile['avatar']` - The image URL to the smallest size of their avatar (32px x 32px)
 * `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)
@@ -92,7 +92,7 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['personastate']` - The users current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
 * `$steamprofile['realname']` - The users "real" name
 * `$steamprofile['primaryclanid']` - The users primary group
-* `$steamprofile['timecreated']` - When the account was created
+* `$steamprofile['timecreated']` - When the account was created in unix time (Check out the wiki for help on converting to date/time)
 * `$_SESSION['steam_uptodate']` - Unset to refresh data from Steam
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 

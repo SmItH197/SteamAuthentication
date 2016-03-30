@@ -97,7 +97,7 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
 
-* For more help on laying out the document or using the $steamprofile variable see the example.php file!
+* For more help on laying out the document or using the $steamprofile variable see the example.php file or the demo.php file!
 
  
 

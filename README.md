@@ -84,7 +84,7 @@ I have created a userInfo.php file which creates an array of ready to use variab
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
 * `$steamprofile['profilestate']` - If set, indicates the user has a community profile configured (will be set to '1')
 * `$steamprofile['personaname']` - Their current set profile name
-* `$steamprofile['lastlogoff']` - Last time the user was online in unix time
+* `$steamprofile['lastlogoff']` - Last time the user was online in unix time [Check out the wiki for help on converting to date/time](https://github.com/SmItH197/SteamAuthentication/wiki/Converting-Unix-Time-Stamp)
 * `$steamprofile['profileurl']` - The URL to their steam profile
 * `$steamprofile['avatar']` - The image URL to the smallest size of their avatar (32px x 32px)
 * `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)
@@ -92,7 +92,7 @@ I have created a userInfo.php file which creates an array of ready to use variab
 * `$steamprofile['personastate']` - The user's current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
 * `$steamprofile['realname']` - The user's "real" name
 * `$steamprofile['primaryclanid']` - The user's primary group
-* `$steamprofile['timecreated']` - When the account was created
+* `$steamprofile['timecreated']` - When the account was created in unix time [Check out the wiki for help on converting to date/time](https://github.com/SmItH197/SteamAuthentication/wiki/Converting-Unix-Time-Stamp)
 * `$_SESSION['steam_uptodate']` - When profile information was last updated in unix time
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
@@ -121,7 +121,6 @@ if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['
 
 ---
 
-For more help on laying out the document or using the $steamprofile variable see the example.php file!
-
+For more help on laying out the document or using the $steamprofile variable see the example.php or the demo.php file!
  
 

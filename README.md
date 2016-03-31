@@ -78,9 +78,9 @@ loginbutton("large");
     
 ##Using Profile Variables
 
-I have create a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
+I have created a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
 
-* `$steamprofile['steamid']` - The users unique SteamID
+* `$steamprofile['steamid']` - The user's unique SteamID
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
 * `$steamprofile['profilestate']` - If set, indicates the user has a community profile configured (will be set to '1')
 * `$steamprofile['personaname']` - Their current set profile name
@@ -89,15 +89,39 @@ I have create a userInfo.php file which creates an array of ready to use variabl
 * `$steamprofile['avatar']` - The image URL to the smallest size of their avatar (32px x 32px)
 * `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)
 * `$steamprofile['avatarfull']` - The image URL to the largest size of their avatar (184px x 184px)
-* `$steamprofile['personastate']` - The users current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
-* `$steamprofile['realname']` - The users "real" name
-* `$steamprofile['primaryclanid']` - The users primary group
+* `$steamprofile['personastate']` - The user's current state, 1 - Online, 2 - Busy, 3 - Away, 4 - Snooze, 5 - looking to trade, 6 - looking to play
+* `$steamprofile['realname']` - The user's "real" name
+* `$steamprofile['primaryclanid']` - The user's primary group
 * `$steamprofile['timecreated']` - When the account was created
-* `$_SESSION['steam_uptodate']` - Unset to refresh data from Steam
+* `$_SESSION['steam_uptodate']` - When profile information was last updated in unix time
 
 Please note that some of these variables may be unavailable for some users as it depends on their privacy settings. 
 
-* For more help on laying out the document or using the $steamprofile variable see the example.php file!
+#### Update User Information
+
+To refresh a user's Steam profile data use:
+html: `<a href="?update">update</a>` - recommended
+-OR-
+php: `$_GET['update']=true;` - this must be set before `require 'steamauth/steamauth.php';`
+
+###### Automatically refresh Steam profile data if older than specified time when they next visit your site
+
+change line 67 of `steamauth.php` 
+From:
+```php
+if (isset($_GET['update'])){ 
+```
+To:
+```php
+if (isset($_GET['update']) || !empty($_SESSION['steam_uptodate']) && $_SESSION['steam_uptodate']+(24*60*60) < time()){ 
+```
+- example shown would update if older than 24 hours.
+
+- the numbers in the brackets `$_SESSION['steam_uptodate']+(24*60*60)` should be the maximum number of seconds before refreshing a user's Steam Profile data.
+
+---
+
+For more help on laying out the document or using the $steamprofile variable see the example.php file!
 
  
 

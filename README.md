@@ -65,24 +65,20 @@ By default, the logout & login buttons reload the current page, this can be chan
 
 ###Choosing a login button style
 
-by default `loginbutton();` will display ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
+by default `loginbutton();` will display ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_02.png)
 
 You can choose the style of the login button by specifying a variable like the following:
 
-loginbutton("small"); 
+loginbutton("rectangle"); 
 
-![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png)
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png)
 
 
 loginbutton();
 -OR-
-loginbutton("large_no"); 
+loginbutton("square"); 
 
-![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png)
-
-loginbutton("large"); 
-
-![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png)
+![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_02.png)
 
     
 ##Using Profile Variables

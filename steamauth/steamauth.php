@@ -6,10 +6,9 @@ function logoutbutton() {
 	echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
 }
 
-function loginbutton($buttonstyle = "large_no") {
-	$button['small'] = "small";
-	$button['large_no'] = "large_noborder";
-	$button['large'] = "large_border";
+function loginbutton($buttonstyle = "square") {
+	$button['rectangle'] = "01";
+	$button['square'] = "02";
 	$button = "<a href='?login'><img src='http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_".$button[$buttonstyle].".png'></a>";
 	
 	echo $button;

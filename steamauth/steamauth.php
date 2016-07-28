@@ -69,4 +69,7 @@ if (isset($_GET['update'])){
 	header('Location: '.$_SERVER['PHP_SELF']);
 	exit;
 }
+
+// Version 3.2
+
 ?>

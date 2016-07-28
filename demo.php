@@ -23,7 +23,7 @@
   <body style="background-color: #EEE;">
     <div class="container" style="margin-top: 30px; margin-bottom: 30px; padding-bottom: 10px; background-color: #FFF;">
 		<h1>SteamAuth Demo</h1>
-		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.1.1</span>
+		<span class="small pull-left" style="padding-right: 10px;">for SteamAuth 3.2</span>
 		<hr>
 		<?php
 if(!isset($_SESSION['steamid'])) {
@@ -148,6 +148,6 @@ if(!isset($_SESSION['steamid'])) {
 		Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a>
 	</div>
 	
-	<!--Version 3.1.1--> 
+	<!--Version 3.2--> 
   </body>
 </html>

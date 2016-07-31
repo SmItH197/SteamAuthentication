@@ -15,10 +15,10 @@ By downloading this library you agree that you will not use it for any gambling 
 
 ##Issues
 
-For Issues realting directly to this SteamAuthentication Library feel free to create a Github Issue
+For Issues relating directly to this SteamAuthentication Library feel free to create a Github Issue.
 
-for any issues relating to general PHP or SQL please use [stackoverflow](http://stackoverflow.com/) or similar,
-else we will generally close these straight away if created here, thanks.
+**For any general PHP or SQL problems please use [stackoverflow](http://stackoverflow.com/) or similar,
+else we will generally close these straight away if created here, thanks!**
 
 ##Download
 

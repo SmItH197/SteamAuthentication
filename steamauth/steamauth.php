@@ -71,5 +71,3 @@ if (isset($_GET['update'])){
 }
 
 // Version 3.2
-
-?>

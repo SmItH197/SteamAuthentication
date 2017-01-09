@@ -38,6 +38,4 @@ $steamprofile['primaryclanid'] = $_SESSION['steam_primaryclanid'];
 $steamprofile['timecreated'] = $_SESSION['steam_timecreated'];
 $steamprofile['uptodate'] = $_SESSION['steam_uptodate'];
 
-// Version 3.2
-?>
-    
+// Version 3.2    

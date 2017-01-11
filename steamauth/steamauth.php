@@ -32,16 +32,24 @@ if (isset($_GET['login'])){
 				preg_match($ptn, $id, $matches);
 				
 				$_SESSION['steamid'] = $matches[1];
+				
+				if (isset($_GET['urlparam'])){
+					$returnpage = $steamauth['loginpage'].'?param='.$_GET['urlparam'];
+				}
+				else{
+					$returnpage = $steamauth['loginpage'];
+				}
+				
 				if (!headers_sent()) {
-					header('Location: '.$steamauth['loginpage']);
+					header('Location: '.$returnpage);
 					exit;
 				} else {
 					?>
 					<script type="text/javascript">
-						window.location.href="<?=$steamauth['loginpage']?>";
+						window.location.href="<?=$returnpage?>";
 					</script>
 					<noscript>
-						<meta http-equiv="refresh" content="0;url=<?=$steamauth['loginpage']?>" />
+						<meta http-equiv="refresh" content="0;url=<?=$returnpage?>" />
 					</noscript>
 					<?php
 					exit;

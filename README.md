@@ -1,10 +1,10 @@
-#SteamAuthentication
+# SteamAuthentication
 
 SteamAuthentication is a basic set of PHP files that enable users to login using their steam account to view protected content on your website. it creates a session using their steamid as the sessionID and checks for the session when a user visits the page. It also includes a file which allows you to use their profile information such as their avatar and online status.
 
 See a demo at http://bensmith.in/steam/
 
-##Gambling Sites
+## Gambling Sites
 
 I nor Steam condone the use of this library for the purpose of gambling sites. Any sites that use this library for this purpose violates their API agreement and will receive notices from Steam to cease operations.
 
@@ -13,18 +13,18 @@ http://store.steampowered.com/news/22883/
 
 By downloading this library you agree that you will not use it for any gambling or illegal activity.
 
-##Issues
+## Issues
 
 For Issues relating directly to this SteamAuthentication Library feel free to create a Github Issue.
 
 **For any general PHP or SQL problems please use [stackoverflow](http://stackoverflow.com/) or similar,
 else we will generally close these straight away if created here, thanks!**
 
-##Download
+## Download
 
 Please note the main repository is constantly being updated so may contain bugs and other bleeding edge risks. For a stable download please visit the releases page: https://github.com/SmItH197/SteamAuthentication/releases
 
-##Foreword
+## Foreword
 
 Thanks goes to:
 - JTX for the original steam openid script (http://pastebin.com/6vZT4RhD)
@@ -32,7 +32,7 @@ Thanks goes to:
 
 **Using MySQL?** Don't forget to sanitise your inputs!
 
-##To Install
+## To Install
 
 Upload the `steamauth` folder.
 
@@ -68,9 +68,9 @@ if(!isset($_SESSION['steamid'])) {
 ```
 By default, the logout & login buttons reload the current page, this can be changed in the SteamConfig file.
 
-#####Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
+##### Be aware that naming a file in your webpage root like any file in the steamauth folder will break SteamAuth.
 
-###Choosing a login button style
+### Choosing a login button style
 
 by default `loginbutton();` will display ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_02.png)
 
@@ -88,7 +88,7 @@ loginbutton("square");
 ![image](https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_02.png)
 
     
-##Using Profile Variables
+## Using Profile Variables
 
 I have created a userInfo.php file which creates an array of ready to use variables that includes profile information of the steam user that has logged in:
 

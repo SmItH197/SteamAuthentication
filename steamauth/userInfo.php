@@ -18,8 +18,16 @@ if (empty($_SESSION['steam_uptodate']) or empty($_SESSION['steam_personaname']))
 	   } else {
 		   $_SESSION['steam_realname'] = "Real name not given";
 	}
-	$_SESSION['steam_primaryclanid'] = $content['response']['players'][0]['primaryclanid'];
-	$_SESSION['steam_timecreated'] = $content['response']['players'][0]['timecreated'];
+	if (isset($content['response']['players'][0]['primaryclanid'])) { 
+		   $_SESSION['steam_primaryclanid'] = $content['response']['players'][0]['primaryclanid'];
+	   } else {
+		   $_SESSION['steam_primaryclanid'] = "Primary group not given or profile hidden";
+	}
+	if (isset($content['response']['players'][0]['timecreated'])) { 
+		   $_SESSION['steam_timecreated'] = $content['response']['players'][0]['timecreated'];
+	   } else {
+		   $_SESSION['steam_timecreated'] = "Profile hidden";
+	}
 	$_SESSION['steam_uptodate'] = time();
 }
 

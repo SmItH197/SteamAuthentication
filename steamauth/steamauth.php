@@ -9,7 +9,7 @@ function logoutbutton() {
 function loginbutton($buttonstyle = "square") {
 	$button['rectangle'] = "01";
 	$button['square'] = "02";
-	$button = "<a href='?login'><img src='http".(isset($_SERVER['HTTPS']) ? "s" : "")."://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_".$button[$buttonstyle].".png'></a>";
+	$button = "<a href='?login'><img src='https".(isset($_SERVER['HTTPS']) ? "s" : "")."://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_".$button[$buttonstyle].".png'></a>";
 	
 	echo $button;
 }
@@ -21,14 +21,14 @@ if (isset($_GET['login'])){
 		$openid = new LightOpenID($steamauth['domainname']);
 		
 		if(!$openid->mode) {
-			$openid->identity = 'http://steamcommunity.com/openid';
+			$openid->identity = 'https://steamcommunity.com/openid';
 			header('Location: ' . $openid->authUrl());
 		} elseif ($openid->mode == 'cancel') {
 			echo 'User has canceled authentication!';
 		} else {
 			if($openid->validate()) { 
 				$id = $openid->identity;
-				$ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
+				$ptn = "/^https:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
 				preg_match($ptn, $id, $matches);
 				
 				$_SESSION['steamid'] = $matches[1];

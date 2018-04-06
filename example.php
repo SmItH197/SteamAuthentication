@@ -27,4 +27,4 @@ if(!isset($_SESSION['steamid'])) {
 ?>  
 </body>
 </html>
-<!--Version 3.2-->
+<!--Version 4.0-->

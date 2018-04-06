@@ -148,6 +148,6 @@ if(!isset($_SESSION['steamid'])) {
 		Demo page by <a href="https://github.com/blackcetha" target="_blank">BlackCetha</a>
 	</div>
 	
-	<!--Version 3.2--> 
+	<!--Version 4.0-> 
   </body>
 </html>

@@ -70,6 +70,6 @@ if (isset($_GET['update'])){
 	exit;
 }
 
-// Version 3.2
+// Version 4.0
 
 ?>

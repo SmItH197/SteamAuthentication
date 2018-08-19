@@ -53,7 +53,7 @@ require 'steamauth/steamauth.php';
 And where you want the protected content to be:
 ```php
 <?php
-if(!isset($_SESSION['steamid'])) {
+if(!isset($_SESSION['steamid']) || empty($_SESSION['username'])) {
 
     loginbutton(); //login button
 

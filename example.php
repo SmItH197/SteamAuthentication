@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-if(!isset($_SESSION['steamid'])) {
+if(!isset($_SESSION['steamid']) || empty($_SESSION['steamid'])) {
 
     echo "welcome guest! please login<br><br>";
     loginbutton(); //login button

@@ -36,14 +36,8 @@ if (isset($_GET['login'])){
 					header('Location: '.$steamauth['loginpage']);
 					exit;
 				} else {
-					?>
-					<script type="text/javascript">
-						window.location.href="<?=$steamauth['loginpage']?>";
-					</script>
-					<noscript>
-						<meta http-equiv="refresh" content="0;url=<?=$steamauth['loginpage']?>" />
-					</noscript>
-					<?php
+					echo "<script type=\"text/javascript\">window.location.href=\"" . $steamauth['loginpage'] . "\";</script>";
+					echo "<noscript><meta http-equiv=\"refresh\" content=\"0;url=" . $steamauth['loginpage'] . "\" /></noscript>";
 					exit;
 				}
 			} else {

@@ -40,4 +40,3 @@ $steamprofile['uptodate'] = $_SESSION['steam_uptodate'];
 
 // Version 4.0
 ?>
-    

@@ -6,7 +6,7 @@ See a demo at https://bensmith.in/steam/
 
 ## Gambling Sites
 
-I nor Steam condone the use of this library for the purpose of gambling sites. Any sites that use this library for this purpose violates their API agreement and will receive notices from Steam to cease operations.
+I, nor Steam, do not condone the use of this library for the purpose of gambling sites. Any sites that use this library for this purpose violates their API agreement and will receive notices from Steam to cease operations.
 
 Read more here:
 http://store.steampowered.com/news/22883/

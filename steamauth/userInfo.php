@@ -7,7 +7,6 @@ if (empty($_SESSION['steam_uptodate']) or empty($_SESSION['steam_personaname']))
 	$_SESSION['steam_communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];
 	$_SESSION['steam_profilestate'] = $content['response']['players'][0]['profilestate'];
 	$_SESSION['steam_personaname'] = $content['response']['players'][0]['personaname'];
-	$_SESSION['steam_lastlogoff'] = $content['response']['players'][0]['lastlogoff'];
 	$_SESSION['steam_profileurl'] = $content['response']['players'][0]['profileurl'];
 	$_SESSION['steam_avatar'] = $content['response']['players'][0]['avatar'];
 	$_SESSION['steam_avatarmedium'] = $content['response']['players'][0]['avatarmedium'];
@@ -27,7 +26,6 @@ $steamprofile['steamid'] = $_SESSION['steam_steamid'];
 $steamprofile['communityvisibilitystate'] = $_SESSION['steam_communityvisibilitystate'];
 $steamprofile['profilestate'] = $_SESSION['steam_profilestate'];
 $steamprofile['personaname'] = $_SESSION['steam_personaname'];
-$steamprofile['lastlogoff'] = $_SESSION['steam_lastlogoff'];
 $steamprofile['profileurl'] = $_SESSION['steam_profileurl'];
 $steamprofile['avatar'] = $_SESSION['steam_avatar'];
 $steamprofile['avatarmedium'] = $_SESSION['steam_avatarmedium'];

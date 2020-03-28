@@ -96,7 +96,6 @@ I have created a userInfo.php file which creates an array of ready to use variab
 * `$steamprofile['communityvisibilitystate']` - This represents whether the profile is visible or not.
 * `$steamprofile['profilestate']` - If set, indicates the user has a community profile configured (will be set to '1')
 * `$steamprofile['personaname']` - Their current set profile name
-* `$steamprofile['lastlogoff']` - Last time the user was online in unix time [Check out the wiki for help on converting to date/time](https://github.com/SmItH197/SteamAuthentication/wiki/Converting-Unix-Time-Stamp)
 * `$steamprofile['profileurl']` - The URL to their steam profile
 * `$steamprofile['avatar']` - The image URL to the smallest size of their avatar (32px x 32px)
 * `$steamprofile['avatarmedium']` - The image URL to the medium sized version of their avatar (64px x 64px)

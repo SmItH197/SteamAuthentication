@@ -58,7 +58,7 @@ if(!isset($_SESSION['steamid'])) {
 			<tr>
 				<td>$steamprofile['communityvisibilitystate']</td>
 				<td><?=$steamprofile['communityvisibilitystate']?></td>
-				<td>1 - Account not visible; 3 - Account is public (Depends on the relationship of your account to the others)</td>
+				<td>1 - Account not visible, 2 - Account is friendsOnly(Broken, it shows as 1.), 3 - Account is public (Depends on the relationship of your account to the others)</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['profilestate']</td>
@@ -69,13 +69,6 @@ if(!isset($_SESSION['steamid'])) {
 				<td>$steamprofile['personaname']</td>
 				<td><?=$steamprofile['personaname']?></td>
 				<td>Public name of the user</td>
-			</tr>
-			<tr>
-				<td>$steamprofile['lastlogoff']</td>
-				<td><?=$steamprofile['lastlogoff']?></td>
-				<td>
-					<a href='http://www.unixtimestamp.com/' target='_blank'>Unix timestamp</a> of the user's last logoff
-				</td>
 			</tr>
 			<tr>
 				<td>$steamprofile['profileurl']</td>

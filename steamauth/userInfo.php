@@ -1,8 +1,13 @@
 <?php
 if (empty($_SESSION['steam_uptodate']) or empty($_SESSION['steam_personaname'])) {
 	require 'SteamConfig.php';
-	$url = file_get_contents("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$steamauth['apikey']."&steamids=".$_SESSION['steamid']); 
-	$content = json_decode($url, true);
+	$url = "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$steamauth['apikey']."&steamids=".$_SESSION['steamid']; 
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,$url);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$content = json_decode($result, true);
 	$_SESSION['steam_steamid'] = $content['response']['players'][0]['steamid'];
 	$_SESSION['steam_communityvisibilitystate'] = $content['response']['players'][0]['communityvisibilitystate'];
 	$_SESSION['steam_profilestate'] = $content['response']['players'][0]['profilestate'];
